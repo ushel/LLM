@@ -46,26 +46,25 @@ add_routes(
 )
 model=OpenAI()
 ##ollama llama2
-# llm=Ollama(model="llama3.2")
+llm=Ollama(model="llama3.2")
 
 prompt1=ChatPromptTemplate.from_template("Write me an essay about {topic} with 100 words")
-# prompt2=ChatPromptTemplate.from_template("Write me an poem about {topic} for a 5 years child with 100 words")
+prompt2=ChatPromptTemplate.from_template("Write me an poem about {topic} for a 5 years child with 100 words")
 
 add_routes(
     app,
     prompt1|model,
     path="/essay"
 
-
 )
 
-# add_routes(
-#     app,
-#     prompt2|llm,
-#     path="/poem"
+add_routes(
+    app,
+    prompt2|llm,
+    path="/poem"
 
 
-# )
+)
 
 
 if __name__=="__main__":

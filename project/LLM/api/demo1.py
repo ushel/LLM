@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Body
-from langserve.validation import OpenAIInvokeRequest  # Assuming it's properly imported
+# from langserve.validation import OpenAIInvokeRequest  # Assuming it's properly imported
 from langchain.chat_models import ChatOpenAI
 import os
 
