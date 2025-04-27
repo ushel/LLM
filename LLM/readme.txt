@@ -17,6 +17,11 @@ mobile app                                         ------> claude
 
 client.py contains webapp or mobile app
 
+for tracking of env file, if cached then use
+git rm .env --cached
+git add .
+git commit -m "message"
+git push origin main
 
 
 
