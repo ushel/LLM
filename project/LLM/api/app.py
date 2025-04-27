@@ -1,3 +1,4 @@
+# os.environ['OPENAI_API_KEY']=os.getenv("OPENAI_API_KEY")
 from fastapi import FastAPI
 from langchain.prompts import ChatPromptTemplate
 from langchain.chat_models import ChatOpenAI
@@ -6,11 +7,11 @@ import uvicorn
 import os
 from langchain_community.llms import Ollama
 from dotenv import load_dotenv
-from fastapi.middleware.cors import CORSMiddleware
+from langchain.llms import OpenAI
 
 load_dotenv()
 
-os.environ['OPENAI_API_KEY']=os.getenv("OPENAI_API_KEY")
+os.environ["OPENAI_API_KEY"]="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"
 
 app=FastAPI(
     title="Langchain Server",
@@ -18,18 +19,37 @@ app=FastAPI(
     decsription="A simple API Server"
 
 )
+# app = FastAPI(
+#     title="My Project",
+#     openapi_url=f"/api/v1/openapi.json",
+#     # docs_url=f"/api/v1/docs",
+#     docs_url="/documentation",
+#     # redoc_url=f"/api/v1/redoc",
+#     redoc_url = None,
+#     root_path="/app.py" # <------ This root_path fix the problem
+# )
+# app = FastAPI(
+#     title="My App",
+#     description="Description of my app.",
+#     version="1.0",
+#     docs_url='/docs',
+#     openapi_url='/openapi.json', # This line solved my issue, in my case it was a lambda function
+#     redoc_url=None,
+#     root_path="/LLM/api/app"
+# )
+
 
 add_routes(
     app,
-    ChatOpenAI(),
+    OpenAI(),
     path="/openai"
 )
-model=ChatOpenAI()
+model=OpenAI()
 ##ollama llama2
-llm=Ollama(model="llama3.2")
+# llm=Ollama(model="llama3.2")
 
 prompt1=ChatPromptTemplate.from_template("Write me an essay about {topic} with 100 words")
-prompt2=ChatPromptTemplate.from_template("Write me an poem about {topic} for a 5 years child with 100 words")
+# prompt2=ChatPromptTemplate.from_template("Write me an poem about {topic} for a 5 years child with 100 words")
 
 add_routes(
     app,
@@ -39,26 +59,14 @@ add_routes(
 
 )
 
-add_routes(
-    app,
-    prompt2|llm,
-    path="/poem"
+# add_routes(
+#     app,
+#     prompt2|llm,
+#     path="/poem"
 
 
-)
-
-
-
-
-# # Set all CORS enabled origins
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=["*"],
-#     allow_credentials=True,
-#     allow_methods=["*"],
-#     allow_headers=["*"],
-#     expose_headers=["*"],
 # )
 
+
 if __name__=="__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app,host="localhost",port=8000)
