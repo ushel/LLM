@@ -25,4 +25,18 @@ git push origin main
 
 
 
+load source --> load --> Transform(chunks) --> Embed(openAi embeddings) --> vector store 
 
+query --> embed --> similarity search --> vector store --> Retrive most similar
+
+
+using retriver (backbone is vector store)
+
+load source --> load --> Transform(chunks) --> Embed(openAi embeddings) --> vector store 
+
+promopts --> Chain and Retriver (using LLM models). (stuff_document_chain)
+
+user --> retriver --> vectorstore
+                  --> LLM model --> promopt
+
+                 (using stuff document chain)
