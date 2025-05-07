@@ -40,3 +40,25 @@ user --> retriver --> vectorstore
                   --> LLM model --> promopt
 
                  (using stuff document chain)
+
+
+
+
+
+
+                 arxiv    wiki    pdfs
+
+                         LLM  
+
+                       Response
+
+Here you have multiple data sources and you want to integrate all them as a wrapper so that you will 
+able to implement your entire Q&A solution.
+
+Tools  -> Toolkits and create wrapper on Toolkits
+Agents
+
+here we have dependencies on arxiv, wiki and pdfs platforms so can use all these platforms as seperate tools so that i can asked different 
+questions to them along with i also have my customized pdf custom data which will be inform of vector embeddings.
+
+what we will do is wrapped i up with the help of toolkit and with help of agent will be able to execute Q&A search
