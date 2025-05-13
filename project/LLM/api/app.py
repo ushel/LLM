@@ -1,4 +1,4 @@
-# os.environ['OPENAI_API_KEY']=os.getenv("OPENAI_API_KEY")
+
 from fastapi import FastAPI
 from langchain.prompts import ChatPromptTemplate
 from langchain.chat_models import ChatOpenAI
@@ -11,8 +11,7 @@ from langchain.llms import OpenAI
 
 load_dotenv()
 
-os.environ["OPENAI_API_KEY"]="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"
-
+os.environ['OPENAI_API_KEY']=os.getenv("OPENAI_API_KEY")
 app=FastAPI(
     title="Langchain Server",
     version="1.0",

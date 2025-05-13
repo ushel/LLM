@@ -4,8 +4,8 @@ from langchain.chat_models import ChatOpenAI
 import os
 
 # Set OpenAI API key (make sure it's loaded correctly)
-os.environ["OPENAI_API_KEY"] = "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"
 
+os.environ['OPENAI_API_KEY']=os.getenv("OPENAI_API_KEY")
 app = FastAPI()
 
 @app.post("/openai")

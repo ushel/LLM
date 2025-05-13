@@ -1,6 +1,5 @@
 # Set OpenAI API key from environment
 
-# os.environ["OPENAI_API_KEY"] = "your-openai-api-key-here"
 # Set OpenAI API key from environment variable
 # Set OpenAI API key from environment variable
 from fastapi import FastAPI
@@ -9,8 +8,8 @@ from langchain.llms import OpenAI
 import os
 
 # Ensure OpenAI API key is set
-os.environ["OPENAI_API_KEY"] = "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"
 
+os.environ['OPENAI_API_KEY']=os.getenv("OPENAI_API_KEY")
 
 # FastAPI app
 app = FastAPI()
