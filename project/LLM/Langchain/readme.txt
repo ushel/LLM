@@ -12,3 +12,6 @@ vector data memory = Stores text ( from conversation or elsewhere) in a vector d
 
 Entity memories = Using a LLM, it remembers details about specific entities.
 
+you can also use multiple memories at one time.
+
+Conversation memory + Entity memory to recall individuals
