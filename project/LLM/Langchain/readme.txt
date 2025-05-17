@@ -7,3 +7,8 @@ ConversationTokenBufferMemory = This memory keeps a buffer of recent transaction
                                 to determine when to flush interactions.
 
 ConversationSummaryMemory = This memory creates a summary of the conversation over time.
+
+vector data memory = Stores text ( from conversation or elsewhere) in a vector database and retrieves the most relevant block of text
+
+Entity memories = Using a LLM, it remembers details about specific entities.
+
