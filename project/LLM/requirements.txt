@@ -16,3 +16,6 @@ wikipedia
 groq
 cassio
 langchain-groq
+agent
+numexpr
+langchain_experimental
