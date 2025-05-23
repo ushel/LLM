@@ -68,3 +68,13 @@ To print output of response vertically...
 import json
 
 print(json.dumps(response.model_dump(), indent=2))
+
+
+
+git branch llmb7  - create new branch
+
+git checkout llmb3 - select branch
+
+git branch  - get names of branch
+
+git branch -D llmb5 - delete the branch llmb6
