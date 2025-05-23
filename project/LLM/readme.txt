@@ -62,3 +62,9 @@ here we have dependencies on arxiv, wiki and pdfs platforms so can use all these
 questions to them along with i also have my customized pdf custom data which will be inform of vector embeddings.
 
 what we will do is wrapped i up with the help of toolkit and with help of agent will be able to execute Q&A search
+
+To print output of response vertically...
+
+import json
+
+print(json.dumps(response.model_dump(), indent=2))
