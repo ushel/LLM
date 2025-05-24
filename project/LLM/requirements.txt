@@ -19,3 +19,4 @@ langchain-groq
 agent
 numexpr
 langchain_experimental
+lamini
