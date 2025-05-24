@@ -20,3 +20,6 @@ agent
 numexpr
 langchain_experimental
 lamini
+kagglehub
+transformers
+hf_xet
